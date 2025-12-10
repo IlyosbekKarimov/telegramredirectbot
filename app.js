@@ -58,30 +58,33 @@ function showMainMenu(ctx, lang) {
     let buttons = [];
     
     if (lang === 'en') {
-        message = '🤖 *Which bot would you like to write to?*';
+        message = '🤖 *Which tutor would you like to write to?*';
         buttons = [
-            [{ text: '🤖 Support Bot', callback_data: 'bot_support' }],
-            [{ text: '💼 Business Bot', callback_data: 'bot_business' }],
-            [{ text: '🎮 Gaming Bot', callback_data: 'bot_gaming' }],
-            [{ text: '📊 Analytics Bot', callback_data: 'bot_analytics' }],
+            [{ text: 'Arziyev Ozod', callback_data: 'bot_arziyev' }],
+            [{ text: 'Olim Tojiyev', callback_data: 'bot_olim' }],
+            [{ text: 'Qamariddin Doliyev', callback_data: 'bot_qamariddin' }],
+            [{ text: 'Aripov Suxrob', callback_data: 'bot_aripov' }],
+            [{ text: 'Quddusbek Asadullayev', callback_data: 'bot_quddusbek' }],
             [{ text: '🌐 Change Language', callback_data: 'change_lang' }]
         ];
     } else if (lang === 'uz') {
-        message = '🤖 *Qaysi botga yozmoqchisiz?*';
+        message = '🤖 *Qaysi tyutorga yozmoqchisiz?*';
         buttons = [
-            [{ text: '🤖 Yordam Boti', callback_data: 'bot_support' }],
-            [{ text: '💼 Biznes Bot', callback_data: 'bot_business' }],
-            [{ text: '🎮 Oʻyin Boti', callback_data: 'bot_gaming' }],
-            [{ text: '📊 Analitika Bot', callback_data: 'bot_analytics' }],
+            [{ text: 'Arziyev Ozod', callback_data: 'bot_arziyev' }],
+            [{ text: 'Olim Tojiyev', callback_data: 'bot_olim' }],
+            [{ text: 'Qamariddin Doliyev', callback_data: 'bot_qamariddin' }],
+            [{ text: 'Aripov Suxrob', callback_data: 'bot_aripov' }],
+            [{ text: 'Quddusbek Asadullayev', callback_data: 'bot_quddusbek' }],
             [{ text: '🌐 Tilni oʻzgartirish', callback_data: 'change_lang' }]
         ];
     } else if (lang === 'ru') {
-        message = '🤖 *С каким ботом вы хотите написать?*';
+        message = '🤖 *С каким репетитор вы хотите написать?*';
         buttons = [
-            [{ text: '🤖 Бот поддержки', callback_data: 'bot_support' }],
-            [{ text: '💼 Бизнес бот', callback_data: 'bot_business' }],
-            [{ text: '🎮 Игровой бот', callback_data: 'bot_gaming' }],
-            [{ text: '📊 Аналитический бот', callback_data: 'bot_analytics' }],
+            [{ text: 'Арзиев Озод', callback_data: 'bot_arziyev' }],
+            [{ text: 'Олим Тоджиев', callback_data: 'bot_olim' }],
+            [{ text: 'Камариддин Долиев', callback_data: 'bot_qamariddin' }],
+            [{ text: 'Арипов Сухроб', callback_data: 'bot_aripov' }],
+            [{ text: 'Куддусбек Асадуллаев', callback_data: 'bot_quddusbek' }],
             [{ text: '🌐 Изменить язык', callback_data: 'change_lang' }]
         ];
     }
@@ -101,54 +104,80 @@ function showMainMenu(ctx, lang) {
     }
 }
 
-// Bot links configuration
-// REPLACE THESE WITH YOUR ACTUAL BOT LINKS
 const botLinks = {
-    bot_support: 'https://t.me/your_support_bot?start=ref',  // Change this
-    bot_business: 'https://t.me/your_business_bot?start=ref', // Change this
-    bot_gaming: 'https://t.me/your_gaming_bot?start=ref',     // Change this
-    bot_analytics: 'https://t.me/your_analytics_bot?start=ref' // Change this
+    bot_arziyev: 'https://t.me/Arziyev_murojaat_bot?start=ref',
+    bot_olim: 'https://t.me/olim_tojiyev_bot?start=ref',
+    bot_qamariddin: 'https://t.me/qamariddindoliyev_bot?start=ref',
+    bot_aripov: 'https://t.me/Aripov_murojaat_bot?start=ref',
+    bot_quddusbek: 'https://t.me/Quddusbek_Asadullayev_bot?start=ref'
 };
 
 // Bot names for display
 const botNames = {
     en: {
-        bot_support: 'Support Bot',
-        bot_business: 'Business Bot',
-        bot_gaming: 'Gaming Bot',
-        bot_analytics: 'Analytics Bot'
+        bot_arziyev: 'Arziyev Ozod',
+        bot_olim: 'Olim Tojiyev',
+        bot_qamariddin: 'Qamariddin Doliyev',
+        bot_aripov: 'Aripov Suxrob',
+        bot_quddusbek: "Quddusbek Asadullayev"
     },
     uz: {
-        bot_support: 'Yordam Boti',
-        bot_business: 'Biznes Bot',
-        bot_gaming: 'Oʻyin Boti',
-        bot_analytics: 'Analitika Bot'
+        bot_arziyev: 'Arziyev Ozod',
+        bot_olim: 'Olim Tojiyev',
+        bot_qamariddin: 'Qamariddin Doliyev',
+        bot_aripov: 'Aripov Suxrob',
+        bot_quddusbek: "Quddusbek Asadullayev"
     },
     ru: {
-        bot_support: 'Бот поддержки',
-        bot_business: 'Бизнес бот',
-        bot_gaming: 'Игровой бот',
-        bot_analytics: 'Аналитический бот'
+        bot_arziyev: 'Arziyev Ozod',
+        bot_olim: 'Olim Tojiyev',
+        bot_qamariddin: 'Qamariddin Doliyev',
+        bot_aripov: 'Aripov Suxrob',
+        bot_quddusbek: "Quddusbek Asadullayev"
     }
 };
 
 // Handle bot selection
-bot.action(['bot_support', 'bot_business', 'bot_gaming', 'bot_analytics'], (ctx) => {
+bot.action(['bot_arziyev', 'bot_olim', 'bot_qamariddin', 'bot_aripov', 'bot_quddusbek'], (ctx) => {
     const botKey = ctx.callbackQuery.data;
     const userId = ctx.from.id;
     const lang = userLanguages[userId] || 'en';
     const botLink = botLinks[botKey];
     const botName = botNames[lang][botKey];
     
+    // Multi-language messages
+    const messages = {
+        en: {
+            title: `🚀 *${botName} Bot*`,
+            instruction: 'Click the button below to start:',
+            startButton: '▶️ Start Bot',
+            backButton: '◀️ Back to Menu'
+        },
+        uz: {
+            title: `🚀 *${botName} Boti*`,
+            instruction: 'Boshlash uchun pastdagi tugmani bosing:',
+            startButton: '▶️ Botni Boshlash',
+            backButton: '◀️ Menyuga Qaytish'
+        },
+        ru: {
+            title: `🚀 *Бот ${botName}*`,
+            instruction: 'Нажмите кнопку ниже, чтобы начать:',
+            startButton: '▶️ Начать Бота',
+            backButton: '◀️ Назад в Меню'
+        }
+    };
+    
+    const msg = messages[lang];
+    
     ctx.answerCbQuery();
     
-    // Send the bot link
-    ctx.reply(`🚀 *${botName}*\n\nClick the button below to start:`, {
+    // Send the bot link with language-appropriate text
+    ctx.reply(`${msg.title}\n\n${msg.instruction}`, {
         parse_mode: 'Markdown',
         reply_markup: {
             inline_keyboard: [
-                [{ text: '▶️ Start Bot', url: botLink }],
-                [{ text: '◀️ Back to Menu', callback_data: 'back_menu' }]
+                [{ text: msg.startButton, url: botLink }],
+                [{ text: msg.backButton, callback_data: 'back_menu' }]
             ]
         }
     });

@@ -61,30 +61,33 @@ function showMainMenu(ctx, lang) {
         message = '🤖 *Which tutor would you like to write to?*';
         buttons = [
             [{ text: 'Arziyev Ozod', callback_data: 'bot_arziyev' }],
-            [{ text: 'Olim Tojiyev', callback_data: 'bot_olim' }],
-            [{ text: 'Qamariddin Doliyev', callback_data: 'bot_qamariddin' }],
+            [{ text: 'Tojiyev Olim', callback_data: 'bot_olim' }],
+            [{ text: 'Doliyev Qamariddin', callback_data: 'bot_qamariddin' }],
             [{ text: 'Aripov Suxrob', callback_data: 'bot_aripov' }],
-            [{ text: 'Quddusbek Asadullayev', callback_data: 'bot_quddusbek' }],
+            [{ text: 'Asadullayev Quddusbek', callback_data: 'bot_quddusbek' }],
+            [{ text: "Azamov Ulug'bek", callback_data: 'bot_azamov'}],
             [{ text: '🌐 Change Language', callback_data: 'change_lang' }]
         ];
     } else if (lang === 'uz') {
-        message = '🤖 *Qaysi tyutorga yozmoqchisiz?*';
+        message = '🤖 *Qaysi tyutorga murojaat qilmoqchisiz?*';
         buttons = [
             [{ text: 'Arziyev Ozod', callback_data: 'bot_arziyev' }],
-            [{ text: 'Olim Tojiyev', callback_data: 'bot_olim' }],
-            [{ text: 'Qamariddin Doliyev', callback_data: 'bot_qamariddin' }],
+            [{ text: 'Tojiyev Olim', callback_data: 'bot_olim' }],
+            [{ text: 'Doliyev Qamariddin', callback_data: 'bot_qamariddin' }],
             [{ text: 'Aripov Suxrob', callback_data: 'bot_aripov' }],
-            [{ text: 'Quddusbek Asadullayev', callback_data: 'bot_quddusbek' }],
+            [{ text: 'Asadullayev Quddusbek', callback_data: 'bot_quddusbek' }],
+            [{ text: "Azamov Ulug'bek", callback_data: 'bot_azamov'}],
             [{ text: '🌐 Tilni oʻzgartirish', callback_data: 'change_lang' }]
         ];
     } else if (lang === 'ru') {
-        message = '🤖 *С каким репетитор вы хотите написать?*';
+        message = '🤖 *С каким репетитором вы хотели бы связаться?*';
         buttons = [
             [{ text: 'Арзиев Озод', callback_data: 'bot_arziyev' }],
-            [{ text: 'Олим Тоджиев', callback_data: 'bot_olim' }],
-            [{ text: 'Камариддин Долиев', callback_data: 'bot_qamariddin' }],
+            [{ text: 'Тоджиев Олим', callback_data: 'bot_olim' }],
+            [{ text: 'Долиев Камариддин', callback_data: 'bot_qamariddin' }],
             [{ text: 'Арипов Сухроб', callback_data: 'bot_aripov' }],
-            [{ text: 'Куддусбек Асадуллаев', callback_data: 'bot_quddusbek' }],
+            [{ text: 'Асадуллаев Куддусбек', callback_data: 'bot_quddusbek' }],
+            [{ text: "Азамов Улугбек", callback_data: 'bot_azamov'}],
             [{ text: '🌐 Изменить язык', callback_data: 'change_lang' }]
         ];
     }
@@ -109,36 +112,40 @@ const botLinks = {
     bot_olim: 'https://t.me/olim_tojiyev_bot?start=ref',
     bot_qamariddin: 'https://t.me/qamariddindoliyev_bot?start=ref',
     bot_aripov: 'https://t.me/Aripov_murojaat_bot?start=ref',
-    bot_quddusbek: 'https://t.me/Quddusbek_Asadullayev_bot?start=ref'
+    bot_quddusbek: 'https://t.me/Quddusbek_Asadullayev_bot?start=ref',
+    bot_azamov: 'https://t.me/samduuf_tyutormurojaat_bot?start=ref'
 };
 
 // Bot names for display
 const botNames = {
     en: {
         bot_arziyev: 'Arziyev Ozod',
-        bot_olim: 'Olim Tojiyev',
-        bot_qamariddin: 'Qamariddin Doliyev',
+        bot_olim: 'Tojiyev Olim',
+        bot_qamariddin: 'Doliyev Qamariddin',
         bot_aripov: 'Aripov Suxrob',
-        bot_quddusbek: "Quddusbek Asadullayev"
+        bot_quddusbek: "Asadullayev Quddusbek",
+        bot_azamov: "Azamov Ulug'bek"
     },
     uz: {
         bot_arziyev: 'Arziyev Ozod',
-        bot_olim: 'Olim Tojiyev',
-        bot_qamariddin: 'Qamariddin Doliyev',
+        bot_olim: 'Tojiyev Olim',
+        bot_qamariddin: 'Doliyev Qamariddin',
         bot_aripov: 'Aripov Suxrob',
-        bot_quddusbek: "Quddusbek Asadullayev"
+        bot_quddusbek: "Asadullayev Quddusbek",
+        bot_azamov: "Azamov Ulug'bek"
     },
     ru: {
-        bot_arziyev: 'Arziyev Ozod',
-        bot_olim: 'Olim Tojiyev',
-        bot_qamariddin: 'Qamariddin Doliyev',
-        bot_aripov: 'Aripov Suxrob',
-        bot_quddusbek: "Quddusbek Asadullayev"
+        bot_arziev: 'Арзиев Озод',
+        bot_olim: 'Тожиев Олим',
+        bot_qamariddin: 'Долиев Камариддин',
+        bot_aripov: 'Арипов Сухроб',
+        bot_quddusbek: "Асадуллаев Куддусбек",
+        bot_azamov: "Азамов Улугбек"
     }
 };
 
 // Handle bot selection
-bot.action(['bot_arziyev', 'bot_olim', 'bot_qamariddin', 'bot_aripov', 'bot_quddusbek'], (ctx) => {
+bot.action(['bot_arziyev', 'bot_olim', 'bot_qamariddin', 'bot_aripov', 'bot_quddusbek', 'bot_azamov'], (ctx) => {
     const botKey = ctx.callbackQuery.data;
     const userId = ctx.from.id;
     const lang = userLanguages[userId] || 'en';

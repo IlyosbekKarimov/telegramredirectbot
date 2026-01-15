@@ -2,6 +2,11 @@ require('dotenv').config();
 const { Telegraf } = require('telegraf');
 const express = require('express');
 
+const dns = require('dns');
+
+dns.setDefaultResultOrder('ipv4first');
+dns.setServers(['8.8.8.8', '8.8.4.4', '1.1.1.1']);  
+
 const app = express();
 const bot = new Telegraf(process.env.BOT_TOKEN);
 
@@ -221,15 +226,35 @@ bot.catch((err, ctx) => {
     ctx.reply('❌ An error occurred. Please try again.');
 });
 
-// Start the bot
-bot.launch()
-    .then(() => {
-        console.log('✅ Bot is running successfully!');
-        console.log('ℹ️  Bot username: @' + bot.botInfo.username);
-    })
-    .catch((err) => {
-        console.error('❌ Failed to start bot:', err);
-    });
+
+async function launchBotWithRetry() {
+    const maxRetries = 3;
+
+    for (let i = 0; i < maxRetries; i++) {
+        try {
+            await bot.launch();
+            console.log("Bot is running successfully!");
+            console.log("Bot username: @" + bot.botInfo.username);
+
+            setInterval(() => {
+                console.log('Keep-alive at', new Date().toISOString());
+            }, 300000);
+
+            return;
+        } catch (error) {
+            console.error(`Attemp ${i + 1}/${maxRetries} failed:`, error.message);
+
+            if (i < maxRetries - 1) {
+                await new Promise(resolve => setTimeout(resolve, 5000));
+            } else {
+                console.error("All retry attempts failed");
+                process.exit(1);
+            }
+        }
+    }
+}
+
+launchBotWithRetry();
 
 // Enable graceful stop
 process.once('SIGINT', () => bot.stop('SIGINT'));

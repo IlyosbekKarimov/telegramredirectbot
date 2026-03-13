@@ -71,6 +71,7 @@ function showMainMenu(ctx, lang) {
             [{ text: 'Aripov Suxrob', callback_data: 'bot_aripov' }],
             [{ text: 'Asadullayev Quddusbek', callback_data: 'bot_quddusbek' }],
             [{ text: "Azamov Ulug'bek", callback_data: 'bot_azamov'}],
+            [{ text: "Aminov Aziz", callback_data: "bot_aminov"}],
             [{ text: '🌐 Change Language', callback_data: 'change_lang' }]
         ];
     } else if (lang === 'uz') {
@@ -82,6 +83,7 @@ function showMainMenu(ctx, lang) {
             [{ text: 'Aripov Suxrob', callback_data: 'bot_aripov' }],
             [{ text: 'Asadullayev Quddusbek', callback_data: 'bot_quddusbek' }],
             [{ text: "Azamov Ulug'bek", callback_data: 'bot_azamov'}],
+            [{ text: "Aminov Aziz", callback_data: "bot_aminov"}],
             [{ text: '🌐 Tilni oʻzgartirish', callback_data: 'change_lang' }]
         ];
     } else if (lang === 'ru') {
@@ -93,6 +95,7 @@ function showMainMenu(ctx, lang) {
             [{ text: 'Арипов Сухроб', callback_data: 'bot_aripov' }],
             [{ text: 'Асадуллаев Куддусбек', callback_data: 'bot_quddusbek' }],
             [{ text: "Азамов Улугбек", callback_data: 'bot_azamov'}],
+            [{ text: "Аминов Азиз", callback_data: 'bot_aminov'}],
             [{ text: '🌐 Изменить язык', callback_data: 'change_lang' }]
         ];
     }
@@ -118,7 +121,8 @@ const botLinks = {
     bot_qamariddin: 'https://t.me/qamariddindoliyev_bot?start=ref',
     bot_aripov: 'https://t.me/Aripov_murojaat_bot?start=ref',
     bot_quddusbek: 'https://t.me/Quddusbek_Asadullayev_bot?start=ref',
-    bot_azamov: 'https://t.me/samduuf_tyutormurojaat_bot?start=ref'
+    bot_azamov: 'https://t.me/samduuf_tyutormurojaat_bot?start=ref',
+    bot_aminov: 'https://t.me/AzizAminovMurojaatBot?start=ref',
 };
 
 // Bot names for display
@@ -129,7 +133,8 @@ const botNames = {
         bot_qamariddin: 'Doliyev Qamariddin',
         bot_aripov: 'Aripov Suxrob',
         bot_quddusbek: "Asadullayev Quddusbek",
-        bot_azamov: "Azamov Ulug'bek"
+        bot_azamov: "Azamov Ulug'bek",
+        bot_aminov: "Aminov Aziz",
     },
     uz: {
         bot_arziyev: 'Arziyev Ozod',
@@ -137,7 +142,8 @@ const botNames = {
         bot_qamariddin: 'Doliyev Qamariddin',
         bot_aripov: 'Aripov Suxrob',
         bot_quddusbek: "Asadullayev Quddusbek",
-        bot_azamov: "Azamov Ulug'bek"
+        bot_azamov: "Azamov Ulug'bek",
+        bot_aminov: "Aminov Aziz",
     },
     ru: {
         bot_arziev: 'Арзиев Озод',
@@ -145,12 +151,13 @@ const botNames = {
         bot_qamariddin: 'Долиев Камариддин',
         bot_aripov: 'Арипов Сухроб',
         bot_quddusbek: "Асадуллаев Куддусбек",
-        bot_azamov: "Азамов Улугбек"
+        bot_azamov: "Азамов Улугбек",
+        bot_aminov: "Аминов Азиз",
     }
 };
 
 // Handle bot selection
-bot.action(['bot_arziyev', 'bot_olim', 'bot_qamariddin', 'bot_aripov', 'bot_quddusbek', 'bot_azamov'], (ctx) => {
+bot.action(['bot_arziyev', 'bot_olim', 'bot_qamariddin', 'bot_aripov', 'bot_quddusbek', 'bot_azamov', 'bot_aminov'], (ctx) => {
     const botKey = ctx.callbackQuery.data;
     const userId = ctx.from.id;
     const lang = userLanguages[userId] || 'en';
